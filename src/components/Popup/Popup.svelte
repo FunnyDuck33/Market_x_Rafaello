@@ -1,5 +1,10 @@
 <script>
     import imageSrc from './assets/image.png';
+    import imageMobileSrc from './assets/image-mobile.png';
+    import closeSrc from './assets/close.svg';
+    import closeMobileSrc from './assets/close-mobile.svg';
+
+    import {isMobile} from "../../helpers";
 
     export let title;
     export let promocode;
@@ -20,9 +25,10 @@
                                 <div class="promocode">{promocode}</div>
                             {/if}
                             <div class="text">{@html text}</div>
-                            <img class="image" src="{imageSrc}" alt="подарки">
+                            <img class="image" src="{isMobile() ? imageMobileSrc : imageSrc}" alt="подарки">
                         </div>
                         <div class="background"></div>
+                        <img class="close" src={isMobile() ? closeMobileSrc : closeSrc} alt="закрыть" on:click>
                     </div>
                 </div>
             </div>
@@ -127,6 +133,15 @@
         filter: blur(70px);
     }
 
+    .close {
+        z-index: 2;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+
+        cursor: pointer;
+    }
+
     .title {
         font-size: 20px;
         line-height: 110%;
@@ -222,6 +237,13 @@
 
         .image {
             width: 100%;
+        }
+
+        .close {
+            top: -18px;
+            right: -18px;
+
+            cursor: pointer;
         }
     }
 </style>

@@ -6,6 +6,10 @@ export function sleep(timeout) {
     });
 }
 
+export function isMobile() {
+    return document.documentElement.clientWidth <= 700;
+}
+
 export function updateStorage(data) {
     const storageString = localStorage.getItem('storage');
 
