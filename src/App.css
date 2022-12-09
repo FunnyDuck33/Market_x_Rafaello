@@ -1,0 +1,35 @@
+:root {
+    --border-width: 2px;
+    --border-radius: 5px;
+}
+
+@media (max-width: 700px) {
+    :root {
+        --border-width: 1px;
+    }
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    src: url("./assets/fonts/YesevaOne-Regular.woff") format("woff");
+    font-family: "YesevaOne";
+    font-weight: 400;
+}
+
+@font-face {
+    src: url("./assets/fonts/YandexSansDisplay-Regular.woff") format("woff");
+    font-family: "YandexSans";
+    font-weight: 400;
+}
+
+
+@font-face {
+    src: url("./assets/fonts/YandexSansDisplay-Bold.woff") format("woff");
+    font-family: "YandexSans";
+    font-weight: 700;
+}
